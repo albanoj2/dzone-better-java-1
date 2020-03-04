@@ -8,6 +8,7 @@ public class Resource implements AutoCloseable {
 
     public void someAction() throws Exception {
         System.out.println("Performed some action");
+        throw new Exception();
     }
 
     @Override
