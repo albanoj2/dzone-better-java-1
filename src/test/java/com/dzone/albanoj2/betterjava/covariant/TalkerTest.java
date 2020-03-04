@@ -1,26 +1,18 @@
 package com.dzone.albanoj2.betterjava.covariant;
 
-import org.junit.jupiter.api.BeforeEach;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-
 public class TalkerTest {
-    
-    private Talker talker;
-    
-    @BeforeEach
-    public void setUp() {
-        talker = new Talker();
-    }
 
     @Test
     public void givenAnimalIsDog_whenTalk_thenDogBarks() {
         
         Dog dog = new Dog();
         
-        String noise = talker.talk(dog);
+        String noise = Talker.talk(dog);
         
         assertThat(noise, is(dog.makeNoise()));
     }
@@ -30,7 +22,7 @@ public class TalkerTest {
         
         Cat cat = new Cat();
         
-        String noise = talker.talk(cat);
+        String noise = Talker.talk(cat);
         
         assertThat(noise, is(cat.makeNoise()));
     }
